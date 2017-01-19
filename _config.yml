@@ -70,3 +70,4 @@ theme: cactus-dark-wrotenwrites
 deploy:
   type: git
   repo: https://github.com/sharpshark28/blog
+  branch: gh-pages
