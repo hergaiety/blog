@@ -1,14 +1,10 @@
 nav:
-  Home: /
-  About: /about/
-  Writing: /archives/
-  Projects: http://github.com/probberechts
-
-projects_url: http://github.com/probberechts
+  Writings: /archives/
+  Portfolio: http://joewroten.com/
 
 customize:
     gravatar:
-        email: 
+        email: sharpshark28@gmail.com
     logo:
         enabled: true
         width: 50
@@ -27,11 +23,9 @@ customize:
         url: /images/apple-touch-icon.png
         gravator: false
     social_links:
-        github: http://github.com/probberechts/cactus-dark
-        twitter: /
-        facebook: /
-        linkedin: /
-    post_count: 5
+        github: http://github.com/sharpshark28
+        twitter: https://twitter.com/sharpshark28
+    post_count: 10
     highlight: rainbow
 
 # RSS
@@ -40,7 +34,7 @@ rss: false
 # Plugins
 plugins:
     disqus_shortname: # Disqus Comments Shortname
-    google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
+    google_analytics: UA-85374505-3 # enter the tracking ID for your Google Analytics
 
 # Miscellaneous
 miscellaneous:
