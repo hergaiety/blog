@@ -10,5 +10,10 @@
     <h1 class="<%= class_name %>" itemprop="name headline">
         <%= post.title %>
     </h1>
+    <% if (post.subtitle) { %>
+        <h2 class="<%= class_name %>" itemprop="name headline">
+            <%= post.subtitle %>
+        </h2>
+    <% } %>
 <% } %>
 
