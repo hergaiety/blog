@@ -70,13 +70,13 @@ brew tap caskroom/cask
 brew cask install iterm2
 ```
 
-* *Zsh* is a powerful shell and an alternative to MacOS’s default Bash. This will be covered in more detail in part 3.
-* *NeoVim* is a modern alternative to Vim TK. This will be covered in more detail in part 2. NeoVim has a strange path due to being in active development at the moment.
-* *iTerm2* TK
-* *Tmux* TK
-* *Ag* is a code-searching tool similar to Ack but faster and will be covered more in the next article.
-* *Reattach-to-user-namespace* is a MacOS Sierra fix to ensure the workflow has access to the clipboard so share copy and paste functionality as one would expect in the correct namespace.
-* *Python* is installed to extend NeoVim’s plugin support.
+* **Zsh** is a powerful shell and an alternative to MacOS’s default Bash. This will be covered in more detail in part 3.
+* **Tmux** is a terminal multiplexer. Using some keyboard hotkeys you can use tabs and split panes for better multitasking.
+* **NeoVim** is a modern alternative to Vim, a terminal based code editor with efficiency and code reading in mind. This will be covered in more detail in part 2. NeoVim has a strange path due to being in active development at the moment.
+* **Python** is installed to extend NeoVim’s plugin support.
+* **Ag** is a code-searching tool similar to Ack but faster. This will be covered more in part 2.
+* **Reattach-to-user-namespace** is a MacOS Sierra fix to ensure the workflow has access to the clipboard so share copy and paste functionality as one would expect in the correct namespace.
+* **iTerm2** is a terminal replacement with a great level of customizability and integration with Tmux.
 
 ### Upgrading NeoVim to Have Python Support
 
@@ -86,28 +86,51 @@ pip3 install neovim
 
 ## Installing Fonts
 
+Brew's Cask capability can be extended to allowing the installation of fonts to the filesystem. 
+
+There are many programmer fonts available to choose from, but _Fira Code has stolen my heart_ to the point of it being used on this very blog article. Monospaced fonts are ideal for programming because every character is the same width meaning code naturally aligns vertically. Fira Code is designed with programming ligatures making commonly used operators combine together into a single symbol. => <= `=> =<`
+
 ``` bash init.sh
 brew tap caskroom/fonts
 brew cask install font-fira-code
 ```
 
-...TK...
+## Setting ZSH as Default Shell
 
 ``` bash init.sh
-echo "-= Setting Zsh as default shell =-"
 chsh -s /usr/local/bin/zsh
-echo "-= Removing any existing configs =-"
+```
+
+## Setting Configs
+
+### Removing Any Existing Configs
+
+Some cleanup in case these files already exist.
+
+``` bash init.sh
 rm ~/.zshrc ~/.tmux.conf ~/.config/nvim/init.vim 2> /dev/null
-echo "-= Symlinking new configs =-"
+```
+
+### Linking Configs
+
+Symlinks can allow the file system point from where configs are expected to be to this repo.
+
+``` bash init.sh
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vimrc ~/.config/nvim/init.vim
-echo "-= Log out and Log Back In to see changes =-"
 ```
 
-Run your newly written init.sh with bash init.sh and then log out. Upon logging back in, launch iTerm2. We’re now running in Zsh and instead of vim we can use `nvim`.
+## Wrapping Up
 
-TK how to alias nvim to vim
+1. Run your newly written init.sh with `bash init.sh` and then log out.
+2. Upon logging back in, launch iTerm2.
+
+We’re now running in Zsh and instead of vim we can use `nvim`.
+
+> Optionally `vim` can launch `nvim` if you add `alias vim="nvim"` to your init.sh
 
 # What’s Next
-Part 2 will cover configuring NeoVim. TK
+Part 2 will cover configuring NeoVim.
+
+{% post_path a_modern_terminal_workflow_2 %}
