@@ -3,7 +3,9 @@ title: A Modern Terminal Workflow — Part 1 / 5
 subtitle: Conquer the CLI using the latest tools made by developers for developers.
 date: 2017/01/19
 tags:
-    - Devtools
+  - Dotfiles
+  - Devtools
+  - Git
 ---
 
 Perhaps you’re a tinkerer, a javascript ninja, or something else entirely it’s essential to have tools that help you do what you do best and look good doing it.
@@ -12,9 +14,11 @@ This is an opinionated walkthrough using tools both new and old that are perform
 
 Optionally, skip ahead and [see the final result](https://github.com/sharpshark28/modern-terminal-workflow).
 
-## What is a Dotfiles repo?
+## What is a Dotfile?
 
-A dotfile is simply a file that begins with a `.` before the filename such as `.vimrc`. These are commonly program configurations.
+A dotfile is simply a file that begins with a `.` before the filename such as `.vimrc`. These are commonly program configurations and are _often times hidden by default on Unix filesystems._
+
+## What is a Dotfiles repo?
 
 Git can host dotfiles and setup scripts to set up a new machine with your tools configured exactly the way you want them. An ideal setup script can be run after a fresh clone of the git repo to symlink its configuration dotfiles with the host machine for a portable terminal workflow.
 
