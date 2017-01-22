@@ -52,14 +52,6 @@ A shell script needs an interpreter. We will be installing Zsh later in this scr
 #!/bin/bash
 ```
 
-## Creating Necessary Directories
-
-NeoVim expects a few directories to exist and so it’s best we add them now.
-
-``` bash init.sh
-mkdir -p ~/.config ~/.config/nvim
-```
-
 ### Installing System Dependencies
 
 Throughout this walkthrough we’ll be installing package managers of varying types. Luckily here we can leverage a MacOS built in tool called Brew which does just this. Brew knows how to find, download, and install CLI applications out of the box and with the addition of an additional tool called Cask it can install GUI applications as well.
@@ -78,9 +70,15 @@ brew cask install iterm2
 * **Reattach-to-user-namespace** is a MacOS Sierra fix to ensure the workflow has access to the clipboard so share copy and paste functionality as one would expect in the correct namespace.
 * **iTerm2** is a terminal replacement with a great level of customizability and integration with Tmux.
 
-### Upgrading NeoVim to Have Python Support
+### Upgrading NeoVim to Have Plugin and Python Support
+
+To make NeoVim a powerful enough tool to be a primary code editor some additional functionality is needed.
+
+[vim-plug](https://github.com/junegunn/vim-plug) is installed as a package manager which will be leveraged in Part 2 to pull down user made plugins like themes, new movements, and ways to navigate the entire project. Some plugins rely on Python to work so a `pip3` command is ran to upgrade NeoVim to support it.
 
 ``` bash init.sh
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 pip3 install neovim
 ```
 
@@ -108,7 +106,15 @@ chsh -s /usr/local/bin/zsh
 Some cleanup in case these files already exist.
 
 ``` bash init.sh
-rm ~/.zshrc ~/.tmux.conf ~/.config/nvim/init.vim 2> /dev/null
+rm -rf ~/.vim ~/.vimrc ~/.zshrc ~/.tmux ~/.tmux.conf ~/.config/nvim 2> /dev/null
+```
+
+### Creating Necessary Directories
+
+NeoVim expects a few directories to exist and so it’s best we add them now.
+
+``` bash init.sh
+mkdir -p ~/.config ~/.config/nvim
 ```
 
 ### Linking Configs
