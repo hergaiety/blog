@@ -16,7 +16,6 @@ tags:
 
 NeoVim is a modern drop-in replacement for Vim. In fact it is easy to share a Vim config with NeoVim via a symlink, but there are some caveats which are outside the scope of this article.
 
-
 # Core Config
 
 ##### Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly.
