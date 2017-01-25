@@ -141,6 +141,7 @@ We’re now running in Zsh and instead of vim we can use `nvim`.
 > Optionally `vim` can launch `nvim` if you add `alias vim="nvim"` to your init.sh
 
 # What’s Next
-Part 2 will cover configuring NeoVim.
 
-{% post_path a_modern_terminal_workflow_2 %}
+Part 2 covers configuring NeoVim.
+
+{% post_link a_modern_terminal_workflow_2 %}

@@ -1,7 +1,7 @@
 ---
 title: A Modern Terminal Workflow — Part 2 / 5
 subtitle: Configuring Neovim
-date: 2017/01/22
+date: 2017/01/24
 tags:
   - Dotfiles
   - Devtools
@@ -20,16 +20,20 @@ NeoVim is a modern drop-in replacement for Vim. In fact it is easy to share a Vi
 
 ##### Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly.
 
-There’s a certain magic to writing your editor config with that very same editor. It gives me a warm tingly sensation. I suggest handwriting these configs so you can learn as you type. `nvim vimrc`
+There’s a certain magic to writing your editor config with that very same editor. I suggest handwriting these configs so you can learn as you type.
+
+`nvim vimrc`
 
 ## Setting Sensible Defaults
 
 ``` vim vimrc
+" Set standard file encoding
 set encoding=utf8
+" No special per file vim override configs
 set nomodeline
 " Stop word wrapping
 set nowrap
-  " Except... on Makrdown. That's good stuff.
+  " Except... on Markdown. That's good stuff.
   autocmd FileType markdown setlocal wrap
 " Adjust system undo levels
 set undolevels=100
@@ -104,16 +108,18 @@ nnoremap <Tab> :bnext!<CR>
 nnoremap <S-Tab> :bprev!<CR><Paste>
 ```
 
-* `Tab` to open switch to next buffer
-* `Shift Tab` to open switch to previous buffer
+* `Tab` to switch to next buffer
+* `Shift Tab` to switch to previous buffer
 
-Down below we’ll add vim-airline to visually show tabs, making this keybinding very intuitive.
+This keybinding becomes more intuitive after installing the plugin suggested below to convert buffers to onscreen tabs with vim-airline.
 
 # Plugins to Enhance Functionality
 
 ## Plugin Manager
 
-TK vim-plug
+Stock, even heavily configured, Vim is lacking features offered by other GUI applications. While the objective is not to convert Vim into something it isn't it is essential to implement some missing functionality through plugins.
+
+There are several plugin managers out there but vim-plug is the most minimal while being fast in uptime and concurrent plugin installation.
 
 ``` vim vimrc
 call plug#begin('~/.local/share/nvim/plugged')
@@ -127,11 +133,13 @@ Between `call plug#begin` and `call plug#end` insert the keyword `Plug` followed
 
 After adding a `Plug` and saving the vimrc file run the install command by hitting colon followed by `PlugInstall`.
 
-``` vim vimrc
+``` vim 
 :PlugInstall
 ```
 
 ## Unite
+
+As stated earlier, Vim is not a GUI. Unite is a commonly used resource for plugins to open panels and other temporary interfaces onscreen. **Unite is required for many plugins to work as expected.**
 
 ``` vim vimrc plugin path
 Plug 'Shougo/unite.vim'
@@ -143,7 +151,7 @@ Plug 'Shougo/unite.vim'
 Plug 'dracula/vim'
 ```
 
-Coming from a design background, I'm rather picky when it comes to themes. Dracula is my theme of choice because it's gorgeous, dark yet vibrant, no config needed, and is supported in a wide variety of apps a consistent experience.
+Dracula is dark yet vibrant, needs no additional configuration, and is supported in a [wide variety of apps](https://draculatheme.com/) for a consistent experience.
 
 ``` vim vimrc plugin settings
 color Dracula
@@ -155,7 +163,7 @@ color Dracula
 Plug 'Yggdroot/indentLine'
 ```
 
-Indentation guides provide a subconcious way of understanding horizontally how your code fits together as well as assisting you in knowing when indentation is incorrect because it'll look more unaligned.
+Indentation guides provide a subconcious way of understanding how your code fits together horizontally as well as assuring that indentation is correct at a glance.
 
 ``` vim vimrc plugin settings
 let g:indentLine_enabled = 1
@@ -168,7 +176,7 @@ let g:indentLine_char = "⟩"
 Plug 'airblade/vim-gitgutter'
 ```
 
-Visual aid to show added/modified/removed lines. Takes advantage of NeoVim's async nature so it'll never slow you down.
+As code is added, modified, or removed a visual aid will be placed alongside the number gutter. gitgutter takes advantage of NeoVim's async capabilities to never slow you down.
 
 ## Tabs & a Status Bar
 
@@ -181,7 +189,7 @@ Programming in vim can abstract away much of what's happening behind the scenes.
 
 vim-airline is widely popular, and surprisingly beautiful, without making vim look too much like a GUI. This plugin and config will show **current mode, current file path, % scrolled through file, tabs for current buffers, and more.**
 
-It even automatically works with plugins it recognizes, such as CtrlP! _(Which we’ll install next…)_
+It automatically works with plugins it recognizes, such as CtrlP! _(Which we’ll install next…)_
 
 ``` vim vimrc plugin settings
 let g:airline#extensions#tabline#enabled=1let g:airline_powerline_fonts=1
@@ -194,7 +202,7 @@ set laststatus=2
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 ```
 
-**The quickest way to jump to a file in your project is with a fuzzy finder.** Similar experiences can be found in popular code editors like Atom.io or Sublime, with vim we have the same experience at _lightning speeds when paired with ag and NeoVim._ I've tried other fuzzy finders like fzf, but have found ctrlp to have the best experience.
+**The quickest way to jump to a file in your project is with a fuzzy finder.** Similar experiences can be found in popular code editors like Atom.io or Sublime. With vim the same experience can be achieved at _lightning speeds when paired with Ag and NeoVim._ I've tried other fuzzy finders like fzf, but have found ctrlp to have the best experience and most reliable.
 
 ``` vim vimrc plugin settings
 nnoremap <Leader>p :CtrlP<CR>
@@ -283,9 +291,8 @@ omap F <Plug>Sneak_F
 
 # Language Specific
 
-TK Normally you’d add language specific stuff but I don’t want to make assumptions in this article.
+The web is a very diverse space. I suggest searching [VimAwesome](http://vimawesome.com/) for the languages you program in most often to find what plugins may assist you personally.
 
 # What’s Next
-Part 3 will cover configuring Zsh.
 
-{% post_path a_modern_terminal_workflow_3 %}
+Part 3 will cover configuring Zsh.
