@@ -1,31 +1,41 @@
 ---
 title: A Modern Terminal Workflow — Part 3 / 5
 subtitle: Configuring Zsh
-date: 2017/29/19
+date: 2017/03/02
 tags:
   - Dotfiles
   - Devtools
   - Zsh
 ---
 
-TK Why Zsh?
+Zsh is a UNIX command interpreter alternative to the default Mac OS shell Bash. Someone who knows Bash already knows the basics of Zsh.
 
-## Zsh Config
+**So then why?** Zsh is increasing in popularity from those who want more from their terminal. Zsh offers features like syntax highlighting, variables, history commands and other advanced features outside the scope of this article. I install it for the customization potential it offers and like that I can grow to [learn new features over time](https://www-s.acm.illinois.edu/workshops/zsh/why.html).
 
-``` bash Terminal
-nvim zshrc
-```
+# Config
 
-### Enabling Color Prompts
+In part 1 the init script set Zsh as the default shell by running `chsh -s /usr/local/bin/zsh`. Logging out then back in will begin using Zsh by default or the command `zsh` will launch the Zsh shell.
+
+`nvim zshrc`
+
+## Enabling Color Prompts
+
+##### Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly.
+
+Enabling color is an essential but important first step.
 
 ``` vim zshrc
 autoload colors zsh/terminfo
 colors
 ```
 
-### Minimal Prompt
+## Minimal Prompt
 
-TK Example Image.
+> This is my [Prompt]. There are many like it but this one is mine.
+
+Example:
+
+![Prompt Example](/images/posts/a_modern_terminal_workflow_3_prompt.png)
 
 ``` vim zshrc
 precmd() { print "" }
@@ -33,9 +43,9 @@ PS1="⟩"
 RPS1="%{$fg[magenta]%}%20<...<%~%<<%{$reset_color%}"
 ```
 
-TK Why.
+A prompt can be a place to put a lot of information at a glance. I'm of the opinion that information belongs hidden behind commands and called upon as needed.
 
-TK Right PS1.
+This prompt consists of an empty line placed above the prompt to separate it from finished commands. The left prompt (PS1) is simply a right arrow character showing where a command can be typed. The right prompt (RPS1) is an ellipsis shortened version showing up to 20 characters from the right of the current path.
 
 ### Autostart Tmux
 

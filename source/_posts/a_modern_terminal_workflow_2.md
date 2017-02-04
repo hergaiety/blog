@@ -296,3 +296,5 @@ The web is a very diverse space. I suggest searching [VimAwesome](http://vimawes
 # What’s Next
 
 Part 3 will cover configuring Zsh.
+
+{% post_link a_modern_terminal_workflow_3 %}
