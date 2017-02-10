@@ -1,7 +1,7 @@
 ---
 title: A Modern Terminal Workflow — Part 3 / 5
 subtitle: Configuring Zsh
-date: 2017/04/02
+date: 2017/10/02
 tags:
   - Dotfiles
   - Devtools
@@ -14,7 +14,7 @@ Zsh is a UNIX command interpreter alternative to the default Mac OS shell Bash. 
 
 # Config
 
-In part 1 the init script set Zsh as the default shell by running `chsh -s /usr/local/bin/zsh`. Logging out then back in will begin using Zsh by default or the command `zsh` will launch the Zsh shell.
+In part 1 the init script set Zsh as the default shell by running `chsh -s /usr/local/bin/zsh`. The next time you log in Zsh is the new default. Or running `zsh` will launch the Zsh shell.
 
 `nvim zshrc`
 
@@ -22,7 +22,7 @@ In part 1 the init script set Zsh as the default shell by running `chsh -s /usr/
 
 ##### Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly.
 
-Enabling color is an essential but important first step.
+Enabling color is an important first step.
 
 ``` vim zshrc
 autoload colors zsh/terminfo
@@ -55,7 +55,7 @@ The command below does a simple check to confirm Tmux is installed before attemp
 if [ "$TMUX" = "" ]; then tmux; fi
 ```
 
-In part 4 Tmux will be discussed in greater detail. For now, know that running it only enhances the possibilities so there is no reason not to autostart Zsh running in Tmux. iTerm2, which will be discused in Part 5, also plays explicitly supports Tmux.
+In part 4 Tmux will be discussed in greater detail. For now, know that running it only enhances the possibilities so there is no reason not to autostart Zsh running with Tmux. iTerm2, which will be discused in Part 5, also plays explicitly supports Tmux.
 
 
 If you instead desire to run Tmux manually you may do so by running the `tmux` command at any point.
@@ -66,7 +66,7 @@ If you instead desire to run Tmux manually you may do so by running the `tmux` c
 setopt auto_cd
 ```
 
-A wise man once said, we only have so many keystrokes in our lives. With this simple command we can eliminate 3 common ones, cd. Now when you type a directory name or filepath and press enter the cd command is assumed.
+A wise man once said, we only have so many keystrokes in our lives. With this simple command we can eliminate 3 of the most common ones, `cd<space>`. Now when you type a directory name or filepath and press enter the cd command is assumed.
 
 ## Spellcheck / Typo Correction
 
@@ -94,7 +94,7 @@ source ~/.antigen.zsh
 
 Above is the configuration to `curl` the plugin manager antigen which will make installing plugins a breeze.
 
-### Syntax Highlighting
+## Syntax Highlighting
 
 ``` vim zshrc
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -104,7 +104,7 @@ Code has syntax highlighting, why doesnt the terminal prompt? This package highl
 
 [Learn More](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-### Autocomplete
+## Autocomplete
 
 ``` vim zshrc
 antigen bundle zsh-users/zsh-autosuggestions
@@ -114,7 +114,7 @@ Once again, code has autocomplete, why not the terminal prompt? Allows for repea
 
 [Learn More](https://github.com/zsh-users/zsh-autosuggestions)
 
-### Git Shorthand
+## Git Shorthand
 
 ``` vim zshrc
 antigen bundle git
@@ -124,5 +124,3 @@ This plugin includes a lot of powerful shorthands for git. The easiest to rememb
 
 # What’s Next
 Part 4 will cover configuring Tmux.
-
-{% post_path a_modern_terminal_workflow_4 %}
