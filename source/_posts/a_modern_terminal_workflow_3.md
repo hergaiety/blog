@@ -124,3 +124,5 @@ This plugin includes a lot of powerful shorthands for git. The easiest to rememb
 
 # What’s Next
 Part 4 will cover configuring Tmux.
+
+{% post_link a_modern_terminal_workflow_4 %}
