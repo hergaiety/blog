@@ -1,7 +1,7 @@
 ---
 title: A Modern Terminal Workflow — Part 5 / 5
 subtitle: Configuring iTerm2
-date: 2017/02/01
+date: 2017/02/21
 tags:
   - Dotfiles
   - Devtools
@@ -9,19 +9,19 @@ tags:
   - iTerm2
 ---
 
+iTerm2 is a Terminal Replacement for Mac OS offering plenty of [customization and features](https://iterm2.com/features.html).
+
+# Config
+
 Open iTerm’s preferences with “⌘,” then tick the following settings:
 
 1. “Load preferences from a custom folder or URL”
 2. Choose ~/dotfiles
 3. “Save changes to folder when iTerm2 quits”
 
-## Use ZSH as Shell
-
-1. Profiles tab
-2. General sub-tab
-3. Command: /usr/local/bin/zsh
-
 ## Theme: Dracula
+
+Dracula is not only a Vim theme but also a theme for many other applications such as iTerm2. This can be added to the dotfiles just like tpm was in part 4 by using a git subtree.
 
 ``` bash Terminal
 git remote add -f iterm-dracula https://github.com/dracula/iterm.git
@@ -47,11 +47,11 @@ What does any of that mean? It's what you want for highly legible code and looki
 1. Profiles tab
 2. Text sub-tab
 3. Change Font
-4. Family: Fira Code (I enjoy size 18) (This is already installed if you ran init.sh)
+4. Family: Fira Code (I enjoy size 18)
 
 ## Cursor Guide
 
-Even if you're so good at terminal that you never lose your cursor, do yourself a favor and turn on the cursor guide. Subconciously a gentle highlight of the current line will draw your eye right to where you need to be.
+Even self proclaimed terminal pro's who claim to never lose track of their cursor should do themselves a favor and enable iTerm2's cursor guide. Subconciously a gentle highlight of the current line will draw your eye right to where you need to be.
 
 1. Profiles tab
 2. Colors sub-tab
@@ -60,7 +60,7 @@ Even if you're so good at terminal that you never lose your cursor, do yourself 
 
 ## Tmux Tab Switching
 
-A clever hack to enable `Ctrl Tab` and `Ctrl Shift Tab` tmux tab switching is to let iTerm handle those shortcuts, then send the default `Ctrl B n` and `Ctrl b p` hex codes to the terminal. This pairs well with Vim’s tabbing being the same but without holding Ctrl. (Special Thanks to [Dan Lowe](http://tangledhelix.com/blog/2012/04/28/iterm2-keymaps-for-tmux/))
+A clever hack to enable `Ctrl Tab` and `Ctrl Shift Tab` tmux tab switching is to let iTerm handle those shortcuts, then send the default `Ctrl B n` and `Ctrl b p` hex codes to the terminal. This pairs well with NeoVim’s tabbing being the same but without holding Ctrl. (Special Thanks to [Dan Lowe](http://tangledhelix.com/blog/2012/04/28/iterm2-keymaps-for-tmux/))
 
 1. Keys
 2. New > “Ctrl Tab” > Send Hex Codes > 0x02 0x6E
@@ -71,4 +71,4 @@ A clever hack to enable `Ctrl Tab` and `Ctrl Shift Tab` tmux tab switching is to
 
 # Outro
 
-TK
+That wraps up my opinionated guide to created a dotfiles repo for a modern terminal workflow. While it does make assumptions about some ideal tools, configurations, and plugins to use this guide has not assumed what programming languages you the reader may be using. Next steps would be to leverage the plugin managers and configuration files created during the guide to make developing with your favorite languages an even more pleasant experience.

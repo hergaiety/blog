@@ -121,3 +121,5 @@ Much like vim-airline, this will give out lower tmux statusbar that powerline lo
 
 # What’s Next
 Part 5 will cover configuring iTerm2.
+
+{% post_link a_modern_terminal_workflow_5 %}
