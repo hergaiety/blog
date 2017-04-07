@@ -19,13 +19,13 @@ Initially the news of my adopting polyphasic sleep was met with _distain and sho
 
 However, **others perked their ears in interest** and asked great questions like "how does that work?", "is it healthy?", or "has it been going well?". **These were meaningful conversations precipitated by people desiring to live interesting lives**.
 
-Discussing polyphasic sleep as a life style choice with individuals has revealed a surprising level of _insight into how others view the world_. **Having these conversations can identify people as toxic or as passionate**. 
+Discussing polyphasic sleep as a life style choice with individuals has revealed a surprising level of _insight into how others view the world_. **Having these conversations can identify people as apathetic or as passionate**. 
 
 ## Making the Most Of Your Time
 
 I desire to live a passionate life. To me that means **expressing love while creating and learning at all times**.
 
-It may surprise some after describing such a desire to hear that innately I view the world in a nihilistic or realist fashion. I'm quite aware of the limited time we live, how I'm living it and who I surround myself with. _Polyphasic sleep promises more awake hours and consequently more life to live_. My formative years should be spent growing my knowledge, relationships and passions.
+I view the world through the lens of existential realism. I'm quite aware of the limited time we live, how I'm living it and who I surround myself with. _Polyphasic sleep promises more awake hours and consequently more life to live_. My formative years should be spent growing my knowledge, relationships and passions.
 
 **More hours are meaningless without intent**. Overscheduling isn't healthy either, but without passion and intent it's easy to ask "why bother?". This is true regardless of polyphasic sleep or not.
 
