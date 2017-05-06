@@ -1,6 +1,6 @@
 ---
 title: What Polyphasic Sleep Taught Me About Passion
-subtitle: Valuing your time. Growing with those who wish to grow with you.
+description: Valuing your time. Growing with those who wish to grow with you.
 date: 2017/04/06
 tags:
   - Life
@@ -29,6 +29,6 @@ I view the world through the lens of existential realism. I'm quite aware of the
 
 **More hours are meaningless without intent**. Overscheduling isn't healthy either, but without passion and intent it's easy to ask "why bother?". This is true regardless of polyphasic sleep or not.
 
----
+# Summary
 
 Polyphasic sleep has given me the gift of more life. **I choose to use it to grow with those willing to grow alongside me in a world of passionate people and passionate actions**.

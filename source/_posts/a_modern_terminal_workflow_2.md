@@ -1,6 +1,6 @@
 ---
 title: A Modern Terminal Workflow — Part 2 / 5
-subtitle: Configuring Neovim
+description: Configuring Neovim
 date: 2017/01/24
 tags:
   - Dotfiles

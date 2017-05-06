@@ -1,6 +1,6 @@
 ---
 title: Getting Started Gets Better With You
-subtitle: Transform company culture by transforming a lesser onboarding experience into a great one for future hires.
+description: Transform company culture by transforming a lesser onboarding experience into a great one for future hires.
 date: 2017/03/16
 tags:
   - Workplace
@@ -27,8 +27,6 @@ Asking for forgiveness rather than permission can be daunting when you're new. A
 
 Ideally publishing these notes internally in an internal knowledge base, wiki, or the README.md of the project repo can be a great resource. I encourage
 anyone to submit a pull request to clean up the often neglected README's in repositories to answer the typical questions that currently may be answered by repetitive word of mouth.
-
----
 
 # See a problem? Be the solution.
 

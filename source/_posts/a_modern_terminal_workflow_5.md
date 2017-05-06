@@ -1,6 +1,6 @@
 ---
 title: A Modern Terminal Workflow — Part 5 / 5
-subtitle: Configuring iTerm2
+description: Configuring iTerm2
 date: 2017/02/21
 tags:
   - Dotfiles

@@ -1,6 +1,6 @@
 ---
 title: A Modern Terminal Workflow — Part 4 / 5
-subtitle: Configuring Tmux
+description: Configuring Tmux
 date: 2017/02/20
 tags:
   - Dotfiles

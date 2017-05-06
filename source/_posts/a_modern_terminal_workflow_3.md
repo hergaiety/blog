@@ -1,6 +1,6 @@
 ---
 title: A Modern Terminal Workflow — Part 3 / 5
-subtitle: Configuring Zsh
+description: Configuring Zsh
 date: 2017/02/10
 tags:
   - Dotfiles

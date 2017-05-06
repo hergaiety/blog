@@ -1,6 +1,6 @@
 ---
 title: Self Code Review with Git Add Patch
-subtitle: Reduce errors and typos while building confidence with every chunk you commit.
+description: Reduce errors and typos while building confidence with every chunk you commit.
 date: 2017/05/04
 tags:
   - Git
@@ -66,6 +66,6 @@ However, `d` is a nice way to skip adding anything from an entire file and can s
 
 Typos or "oops!" can be quickly corrected with the `e` response. This will open just the chunk for quick adjustments including line adding and removal.
 
----
+# Summary
 
 Git patch has become a core part of my workflow to **ensure quality** and boost **personal confidence in the code I ship**. Give it a try today!

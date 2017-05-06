@@ -1,6 +1,6 @@
 ---
 title: Easy Git Commit Targeting
-subtitle: Shortened SHA hashes and relative offsets
+description: Shortened SHA hashes and relative offsets
 date: 2017/04/21
 tags:
   - Git
@@ -51,6 +51,6 @@ So close! Ever want to target the commit just previous to a SHA hash? It's easie
 git diff 123abc~
 ```
 
----
+# Summary
 
 Through a combination of shortened SHA hashes, HEAD, and relative tilde/caret characters anyone can fly through git history with confidence.

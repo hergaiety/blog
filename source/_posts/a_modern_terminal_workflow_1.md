@@ -1,6 +1,6 @@
 ---
 title: A Modern Terminal Workflow — Part 1 / 5
-subtitle: Conquer the CLI using the latest tools made by developers for developers.
+description: Conquer the CLI using the latest tools made by developers for developers.
 date: 2017/01/19
 tags:
   - Dotfiles
