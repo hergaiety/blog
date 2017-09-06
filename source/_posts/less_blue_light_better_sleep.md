@@ -35,7 +35,9 @@ Sitting for eight or more hours staring at a screen isn't what you're paid for -
 
 Just as there are glasses to protect from the sun, **some glasses filter out blue light**. Over the counter blue light filtering lenses are available or you may _speak with your eye doctor_ on **adding them to your next pair**. I personally use blue light filters in my primary pair of glasses and can happily say there is no color noticable color distortion to disrupt my design work.
 
-Applications like F.lux allow for removing or reducing _the output_ of blue light from your device. Some of these tools can intelligently fade the amount of blue light based on the time of day or be disabled based on a timer.
+UPDATE: Some applications you already use such as Amazon's Kindle book reading service offers dark or sepia themes for reading with reduced eye strain.
+
+Applications like [F.lux](https://justgetflux.com/) (or [iOS Night Shift](https://support.apple.com/en-us/HT207570), [Android Twilight](https://play.google.com/store/apps/details?id=com.urbandroid.lux), [Linux Redshift](http://jonls.dk/redshift/) and others) allow for removing or reducing _the output_ of blue light from your device. Some of these tools can intelligently fade the amount of blue light based on the time of day or be disabled based on a timer.
 
 ## On Sleep
 
