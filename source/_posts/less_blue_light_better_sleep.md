@@ -13,6 +13,10 @@ tags:
 
 Actively limiting blue light, both artificial and natural, can make you a healthier and happier person. No, really, it can.
 
+![Blurry Blue Light on Face with Light Leaks](/images/posts/less_blue_light_better_sleep.jpg)
+
+<cite>Photo by [Juil Yoon](https://unsplash.com/photos/anhQGEYbnV4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)</cite>
+
 Imagine a workday without eye strain or grogginess. Regaining control over your ability to fall asleep comfortably. With some tweaks to daily habits and reducing blue light intake this can be a reality.
 
 ## What? Why blue light?
