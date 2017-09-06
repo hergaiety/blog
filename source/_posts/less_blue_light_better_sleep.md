@@ -33,7 +33,7 @@ Sitting for eight or more hours staring at a screen isn't what you're paid for -
 
 ### Filtering Blue Light
 
-Just as there are glasses to protect from the sun, **some glasses filter out blue light**. Over the counter blue light filtering lenses are available or you may _speak with your eye doctor_ on **adding them to your next pair**. I personally use blue light filters in my primary pair of glasses and can happily say there is no color noticable color distortion to disrupt my design work.
+Just as there are glasses to protect from the sun, **some glasses filter out blue light**. Over the counter blue light filtering lenses are available or you may _speak with your eye doctor_ on **adding them to your next pair**. I personally use blue light filters in my primary pair of glasses and can happily say there is no color noticeable color distortion to disrupt my design work.
 
 UPDATE: Some applications you already use such as Amazon's Kindle book reading service offers dark or sepia themes for reading with reduced eye strain.
 
