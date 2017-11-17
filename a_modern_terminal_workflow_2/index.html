@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang=En>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Configuring Neovim">
+<meta name="keywords" content="Dotfiles,Devtools,NeoVim,Vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Modern Terminal Workflow — Part 2 &#x2F; 5">
+<meta property="og:url" content="https://wrotenwrites.com/a_modern_terminal_workflow_2/index.html">
+<meta property="og:site_name" content="Wroten Writes">
+<meta property="og:description" content="Configuring Neovim">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2017-11-11T02:30:37.470Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Modern Terminal Workflow — Part 2 &#x2F; 5">
+<meta name="twitter:description" content="Configuring Neovim">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>A Modern Terminal Workflow — Part 2 / 5</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/a_modern_terminal_workflow_3/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/a_modern_terminal_workflow_1/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/a_modern_terminal_workflow_2/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&text=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&is_video=false&description=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A Modern Terminal Workflow — Part 2 / 5&body=Check out this article: https://wrotenwrites.com/a_modern_terminal_workflow_2/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&name=A Modern Terminal Workflow — Part 2 / 5&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Core-Config"><span class="toc-number">1.</span> <span class="toc-text">Core Config</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Note-Syntax-highlighting-and-color-may-not-work-as-expected-within-Tmux-until-it-is-configured-in-Part-4-correctly"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly.</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-Sensible-Defaults"><span class="toc-number">1.1.</span> <span class="toc-text">Setting Sensible Defaults</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Opinionated-Defaults"><span class="toc-number">1.2.</span> <span class="toc-text">Opinionated Defaults</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Remapping-lt-Leader-gt-to-lt-Space-gt"><span class="toc-number">1.2.1.</span> <span class="toc-text">Remapping <Leader> to <Space></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disable-mouse-support"><span class="toc-number">1.2.2.</span> <span class="toc-text">Disable mouse support</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-Arrow-Keys-to-Resize-Panes"><span class="toc-number">1.2.3.</span> <span class="toc-text">Setting Arrow Keys to Resize Panes</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dealing-with-Buffers-Tabs"><span class="toc-number">1.3.</span> <span class="toc-text">Dealing with Buffers / Tabs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Return-to-the-last-file-opened"><span class="toc-number">1.3.1.</span> <span class="toc-text">Return to the last file opened</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Next-Previous-Buffer-Tab"><span class="toc-number">1.4.</span> <span class="toc-text">Next / Previous Buffer (Tab)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugins-to-Enhance-Functionality"><span class="toc-number">2.</span> <span class="toc-text">Plugins to Enhance Functionality</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Manager"><span class="toc-number">2.1.</span> <span class="toc-text">Plugin Manager</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#To-Install-Plugins"><span class="toc-number">2.1.1.</span> <span class="toc-text">To Install Plugins</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unite"><span class="toc-number">2.2.</span> <span class="toc-text">Unite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme-Dracula"><span class="toc-number">2.3.</span> <span class="toc-text">Theme: Dracula</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Indent-Guides"><span class="toc-number">2.4.</span> <span class="toc-text">Indent Guides</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Gutter"><span class="toc-number">2.5.</span> <span class="toc-text">Git Gutter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs-amp-a-Status-Bar"><span class="toc-number">2.6.</span> <span class="toc-text">Tabs & a Status Bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fuzzy-Finder"><span class="toc-number">2.7.</span> <span class="toc-text">Fuzzy Finder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-in-Files"><span class="toc-number">2.8.</span> <span class="toc-text">Find in Files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Project-as-File-Tree"><span class="toc-number">2.9.</span> <span class="toc-text">Project as File Tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Autocomplete"><span class="toc-number">2.10.</span> <span class="toc-text">Autocomplete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linting"><span class="toc-number">2.11.</span> <span class="toc-text">Linting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sneaking-—-Efficient-Moving"><span class="toc-number">2.12.</span> <span class="toc-text">Sneaking — Efficient Moving</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Language-Specific"><span class="toc-number">3.</span> <span class="toc-text">Language Specific</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What’s-Next"><span class="toc-number">4.</span> <span class="toc-text">What’s Next</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        A Modern Terminal Workflow — Part 2 / 5
+    </h1>
+    
+        <h2 class="posttitle" itemprop="name headline">
+            Configuring Neovim
+        </h2>
+    
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wroten Writes</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-01-24T06:00:00.000Z" itemprop="datePublished">2017-01-24</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Devtools/">Devtools</a>, <a class="tag-link" href="/tags/Dotfiles/">Dotfiles</a>, <a class="tag-link" href="/tags/NeoVim/">NeoVim</a>, <a class="tag-link" href="/tags/Vim/">Vim</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><a href="https://vimeo.com/53144573">Vim is about precision editing at the speed of thought</a>. Vim is also about quickly navigating a project to find and read old code.</p>
+<blockquote>
+<p>Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. …[Therefore,] making it easy to read makes it easier to write.<br>― <em>Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship</em></p>
+</blockquote>
+<p>NeoVim is a modern drop-in replacement for Vim. In fact it is easy to share a Vim config with NeoVim via a symlink, but there are some caveats which are outside the scope of this article.</p>
+<h1 id="Core-Config"><a href="#Core-Config" class="headerlink" title="Core Config"></a>Core Config</h1><h5 id="Note-Syntax-highlighting-and-color-may-not-work-as-expected-within-Tmux-until-it-is-configured-in-Part-4-correctly"><a href="#Note-Syntax-highlighting-and-color-may-not-work-as-expected-within-Tmux-until-it-is-configured-in-Part-4-correctly" class="headerlink" title="Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly."></a>Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly.</h5><p>There’s a certain magic to writing your editor config with that very same editor. I suggest handwriting these configs so you can learn as you type.</p>
+<p><code>nvim vimrc</code></p>
+<h2 id="Setting-Sensible-Defaults"><a href="#Setting-Sensible-Defaults" class="headerlink" title="Setting Sensible Defaults"></a>Setting Sensible Defaults</h2><figure class="highlight vim"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" Set standard file encoding</span></span><br><span class="line"><span class="keyword">set</span> encoding=utf8</span><br><span class="line"><span class="comment">" No special per file vim override configs</span></span><br><span class="line"><span class="keyword">set</span> nomodeline</span><br><span class="line"><span class="comment">" Stop word wrapping</span></span><br><span class="line"><span class="keyword">set</span> nowrap</span><br><span class="line">  <span class="comment">" Except... on Markdown. That's good stuff.</span></span><br><span class="line">  <span class="keyword">autocmd</span> FileType markdown <span class="keyword">setlocal</span> wrap</span><br><span class="line"><span class="comment">" Adjust system undo levels</span></span><br><span class="line"><span class="keyword">set</span> undolevels=<span class="number">100</span></span><br><span class="line"><span class="comment">" Use system clipboard</span></span><br><span class="line"><span class="keyword">set</span> clipboard=unnamed</span><br><span class="line"><span class="comment">" Set tab width and convert tabs to spaces</span></span><br><span class="line"><span class="keyword">set</span> tabstop=<span class="number">2</span></span><br><span class="line"><span class="keyword">set</span> softtabstop=<span class="number">2</span></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">shiftwidth</span>=<span class="number">2</span></span><br><span class="line"><span class="keyword">set</span> expandtab</span><br><span class="line"><span class="comment">" Don't let Vim hide characters or make loud dings</span></span><br><span class="line"><span class="keyword">set</span> conceallevel=<span class="number">1</span></span><br><span class="line"><span class="keyword">set</span> noerrorbells</span><br><span class="line"><span class="comment">" Number gutter</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span></span><br><span class="line"><span class="comment">" Use search highlighting</span></span><br><span class="line"><span class="keyword">set</span> hlsearch</span><br><span class="line"><span class="comment">" Space above/beside cursor from screen edges</span></span><br><span class="line"><span class="keyword">set</span> scrolloff=<span class="number">1</span></span><br><span class="line"><span class="keyword">set</span> sidescrolloff=<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h2 id="Opinionated-Defaults"><a href="#Opinionated-Defaults" class="headerlink" title="Opinionated Defaults"></a>Opinionated Defaults</h2><h3 id="Remapping-lt-Leader-gt-to-lt-Space-gt"><a href="#Remapping-lt-Leader-gt-to-lt-Space-gt" class="headerlink" title="Remapping &lt;Leader&gt; to &lt;Space&gt;"></a>Remapping <code>&lt;Leader&gt;</code> to <code>&lt;Space&gt;</code></h3><figure class="highlight vim"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mapleader=<span class="string">"\&lt;SPACE&gt;"</span></span><br></pre></td></tr></table></figure>
+<p>The <code>&lt;Leader&gt;</code> key is what is pressed before another key to activate some command via a shortcut. By default Vim uses the rather awkward key <code>\</code>. Many respected Vim users choose <code>&lt;Space&gt;</code> as their leader key instead and I agree with this change.</p>
+<h3 id="Disable-mouse-support"><a href="#Disable-mouse-support" class="headerlink" title="Disable mouse support"></a>Disable mouse support</h3><figure class="highlight vim"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> mouse=r</span><br><span class="line"><span class="keyword">let</span> $NVIM_TUI_ENABLE_CURSOR_SHAPE=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>These dotfiles are going to rock this world so hard we don’t need mice where we’re going. Keep those hands on the keyboard and power on.</p>
+<h3 id="Setting-Arrow-Keys-to-Resize-Panes"><a href="#Setting-Arrow-Keys-to-Resize-Panes" class="headerlink" title="Setting Arrow Keys to Resize Panes"></a>Setting Arrow Keys to Resize Panes</h3><figure class="highlight vim"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Left&gt;</span> :<span class="keyword">vertical</span> <span class="keyword">resize</span> -<span class="number">1</span><span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Right&gt;</span> :<span class="keyword">vertical</span> <span class="keyword">resize</span> +<span class="number">1</span><span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Up&gt;</span> :<span class="keyword">resize</span> -<span class="number">1</span><span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Down&gt;</span> :<span class="keyword">resize</span> +<span class="number">1</span><span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="comment">" Disable arrow keys completely in Insert Mode</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;up&gt;</span> <span class="symbol">&lt;nop&gt;</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;down&gt;</span> <span class="symbol">&lt;nop&gt;</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;left&gt;</span> <span class="symbol">&lt;nop&gt;</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;right&gt;</span> <span class="symbol">&lt;nop&gt;</span></span><br></pre></td></tr></table></figure>
+<p><em>This was the config best decision I ever made.</em> <strong>Relying on arrow keys results in less efficient code editing.</strong> Should you find this frustrating, turn those frustrations into learning experiences to find the quickest way to have the cursor reach the target.</p>
+<h2 id="Dealing-with-Buffers-Tabs"><a href="#Dealing-with-Buffers-Tabs" class="headerlink" title="Dealing with Buffers / Tabs"></a>Dealing with Buffers / Tabs</h2><h3 id="Return-to-the-last-file-opened"><a href="#Return-to-the-last-file-opened" class="headerlink" title="Return to the last file opened"></a>Return to the last file opened</h3><figure class="highlight vim"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;Leader&gt;</span><span class="symbol">&lt;Leader&gt;</span> &lt;<span class="keyword">c</span>-^&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Space Space</code> to open previously opened file buffer</li>
+</ul>
+<h2 id="Next-Previous-Buffer-Tab"><a href="#Next-Previous-Buffer-Tab" class="headerlink" title="Next / Previous Buffer (Tab)"></a>Next / Previous Buffer (Tab)</h2><figure class="highlight vim"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Tab&gt;</span> :bnext!<span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;S-Tab&gt;</span> :bprev!<span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;Paste&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Tab</code> to switch to next buffer</li>
+<li><code>Shift Tab</code> to switch to previous buffer</li>
+</ul>
+<p>This keybinding becomes more intuitive after installing the plugin suggested below to convert buffers to onscreen tabs with vim-airline.</p>
+<h1 id="Plugins-to-Enhance-Functionality"><a href="#Plugins-to-Enhance-Functionality" class="headerlink" title="Plugins to Enhance Functionality"></a>Plugins to Enhance Functionality</h1><h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><p>Stock, even heavily configured, Vim is lacking features offered by other GUI applications. While the objective is not to convert Vim into something it isn’t it is essential to implement some missing functionality through plugins.</p>
+<p>There are several plugin managers out there but vim-plug is the most minimal while being fast in uptime and concurrent plugin installation.</p>
+<figure class="highlight vim"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> plug#begin(<span class="string">'~/.local/share/nvim/plugged'</span>)</span><br><span class="line"># PLUGINS GO HERE!!!</span><br><span class="line"><span class="keyword">call</span> plug#end()</span><br></pre></td></tr></table></figure>
+<h3 id="To-Install-Plugins"><a href="#To-Install-Plugins" class="headerlink" title="To Install Plugins"></a>To Install Plugins</h3><p>Between <code>call plug#begin</code> and <code>call plug#end</code> insert the keyword <code>Plug</code> followed by the path to the plugin in Github such as <code>Plug &#39;username/project</code>. See further examples in the suggested plugins below.</p>
+<p>After adding a <code>Plug</code> and saving the vimrc file run the install command by hitting colon followed by <code>PlugInstall</code>.</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PlugInstall</span><br></pre></td></tr></table></figure>
+<h2 id="Unite"><a href="#Unite" class="headerlink" title="Unite"></a>Unite</h2><p>As stated earlier, Vim is not a GUI. Unite is a commonly used resource for plugins to open panels and other temporary interfaces onscreen. <strong>Unite is required for many plugins to work as expected.</strong></p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'Shougo/unite.vim'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Theme-Dracula"><a href="#Theme-Dracula" class="headerlink" title="Theme: Dracula"></a>Theme: Dracula</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'dracula/vim'</span></span><br></pre></td></tr></table></figure>
+<p>Dracula is dark yet vibrant, needs no additional configuration, and is supported in a <a href="https://draculatheme.com/">wide variety of apps</a> for a consistent experience.</p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">color Dracula</span><br></pre></td></tr></table></figure>
+<h2 id="Indent-Guides"><a href="#Indent-Guides" class="headerlink" title="Indent Guides"></a>Indent Guides</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'Yggdroot/indentLine'</span></span><br></pre></td></tr></table></figure>
+<p>Indentation guides provide a subconcious way of understanding how your code fits together horizontally as well as assuring that indentation is correct at a glance.</p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">g:indentLine_enabled</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:indentLine_char</span> = <span class="string">"⟩"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Git-Gutter"><a href="#Git-Gutter" class="headerlink" title="Git Gutter"></a>Git Gutter</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'airblade/vim-gitgutter'</span></span><br></pre></td></tr></table></figure>
+<p>As code is added, modified, or removed a visual aid will be placed alongside the number gutter. gitgutter takes advantage of NeoVim’s async capabilities to never slow you down.</p>
+<h2 id="Tabs-amp-a-Status-Bar"><a href="#Tabs-amp-a-Status-Bar" class="headerlink" title="Tabs &amp; a Status Bar"></a>Tabs &amp; a Status Bar</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'vim-airline/vim-airline'</span></span><br><span class="line">Plug <span class="string">'vim-airline/vim-airline-themes'</span></span><br></pre></td></tr></table></figure>
+<p>Programming in vim can abstract away much of what’s happening behind the scenes. In many ways, this is great — but visual reminders are useful for making day-to-day programming a nobrainer.</p>
+<p>vim-airline is widely popular, and surprisingly beautiful, without making vim look too much like a GUI. This plugin and config will show <strong>current mode, current file path, % scrolled through file, tabs for current buffers, and more.</strong></p>
+<p>It automatically works with plugins it recognizes, such as CtrlP! <em>(Which we’ll install next…)</em></p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#enabled=<span class="number">1</span><span class="keyword">let</span> <span class="variable">g:airline_powerline_fonts</span>=<span class="number">1</span></span><br><span class="line"><span class="keyword">set</span> laststatus=<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="Fuzzy-Finder"><a href="#Fuzzy-Finder" class="headerlink" title="Fuzzy Finder"></a>Fuzzy Finder</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'ctrlpvim/ctrlp.vim'</span>, &#123; <span class="string">'on'</span>: <span class="string">'CtrlP'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>The quickest way to jump to a file in your project is with a fuzzy finder.</strong> Similar experiences can be found in popular code editors like Atom.io or Sublime. With vim the same experience can be achieved at <em>lightning speeds when paired with Ag and NeoVim.</em> I’ve tried other fuzzy finders like fzf, but have found ctrlp to have the best experience and most reliable.</p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Leader&gt;</span><span class="keyword">p</span> :CtrlP<span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Leader&gt;</span>t :CtrlP<span class="symbol">&lt;CR&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Space t</code> or <code>Space p</code> opens Fuzzy Finder</li>
+</ul>
+<h2 id="Find-in-Files"><a href="#Find-in-Files" class="headerlink" title="Find in Files"></a>Find in Files</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'mhinz/vim-grepper'</span></span><br></pre></td></tr></table></figure>
+<p><strong>Sometimes you just need to find some text somewhere in your project.</strong> The Silver Searcher, also known as Ag does just this and it does so very quickly. Grepper uses Ag’s speed combined with NeoVim’s async abilities to provide a fast way to find code anywhere in your project or buffers.</p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Leader&gt;</span>fp :Grepper<span class="symbol">&lt;Space&gt;</span>-query<span class="symbol">&lt;Space&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Leader&gt;</span>fb :Grepper<span class="symbol">&lt;Space&gt;</span>-<span class="keyword">buffers</span><span class="symbol">&lt;Space&gt;</span>-query<span class="symbol">&lt;Space&gt;</span>-<span class="symbol">&lt;Space&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Space f p</code> to type a search to find matches in entire <strong>p</strong>roject</li>
+<li><code>Space f b</code> to type a search to find matches in current <strong>b</strong>uffers</li>
+</ul>
+<h2 id="Project-as-File-Tree"><a href="#Project-as-File-Tree" class="headerlink" title="Project as File Tree"></a>Project as File Tree</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'Shougo/vimfiler.vim'</span>, &#123; <span class="string">'on'</span>: <span class="string">'VimFiler'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>While <em>not</em> my preferred way to navigate a project, it’s handy to have a file tree to see directory structure and browse for a file manually.</p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">map</span> ` :VimFiler -explorer<span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">map</span> ~ :VimFilerCurrentDir -explorer -<span class="keyword">find</span><span class="symbol">&lt;CR&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Space backtick</code> to toggle File Tree</li>
+<li><code>Space ~</code> to open File Tree from current buffer’s directory</li>
+</ul>
+<h2 id="Autocomplete"><a href="#Autocomplete" class="headerlink" title="Autocomplete"></a>Autocomplete</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'Shougo/deoplete.nvim'</span>, &#123; <span class="string">'do'</span>: <span class="string">':UpdateRemotePlugins'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>A pretty standard feature of many code editors, an async dropdown tabbable suggestion menu as you type.</p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">g:deoplete</span>#enable_at_startup = <span class="number">1</span></span><br><span class="line"><span class="keyword">inoremap</span> <span class="symbol">&lt;expr&gt;</span><span class="symbol">&lt;tab&gt;</span> <span class="built_in">pumvisible</span>() ? <span class="string">"\&lt;c-n&gt;"</span> : <span class="string">"\&lt;tab&gt;"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Linting"><a href="#Linting" class="headerlink" title="Linting"></a>Linting</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'w0rp/ale'</span></span><br></pre></td></tr></table></figure>
+<p>Async as you type code linting at its finest. Zero config needed.</p>
+<h2 id="Sneaking-—-Efficient-Moving"><a href="#Sneaking-—-Efficient-Moving" class="headerlink" title="Sneaking — Efficient Moving"></a>Sneaking — Efficient Moving</h2><figure class="highlight vim"><figcaption><span>vimrc plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'justinmk/vim-sneak'</span></span><br></pre></td></tr></table></figure>
+<p>The secret to never needing to <code>wwwww</code>, or worse <code>lllll</code> is learning how to Sneak around your code. Efficient targeting comes from understanding where you want to jump to and pressing the appropriate sneak keys to get there. Key bindings listed below.</p>
+<figure class="highlight vim"><figcaption><span>vimrc plugin settings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">g:sneak</span>#s_next = <span class="number">1</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="keyword">f</span> <span class="symbol">&lt;Plug&gt;</span>Sneak_f</span><br><span class="line"><span class="keyword">nmap</span> F <span class="symbol">&lt;Plug&gt;</span>Sneak_F</span><br><span class="line"><span class="keyword">xmap</span> <span class="keyword">f</span> <span class="symbol">&lt;Plug&gt;</span>Sneak_f</span><br><span class="line"><span class="keyword">xmap</span> F <span class="symbol">&lt;Plug&gt;</span>Sneak_F</span><br><span class="line"><span class="keyword">omap</span> <span class="keyword">f</span> <span class="symbol">&lt;Plug&gt;</span>Sneak_f</span><br><span class="line"><span class="keyword">omap</span> F <span class="symbol">&lt;Plug&gt;</span>Sneak_F</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>f &lt;key&gt;</code> to jump to next <code>&lt;key&gt;</code></li>
+<li><code>F &lt;key&gt;</code> to jump to previous <code>&lt;key&gt;</code></li>
+<li><code>f</code> to following match</li>
+<li><code>s &lt;key&gt;&lt;key&gt;</code> to jump to next <code>&lt;key&gt;&lt;key&gt;</code></li>
+<li><code>S &lt;key&gt;&lt;key&gt;</code> to jump to previous <code>&lt;key&gt;&lt;key&gt;</code></li>
+<li><code>s</code> to following match</li>
+</ul>
+<h1 id="Language-Specific"><a href="#Language-Specific" class="headerlink" title="Language Specific"></a>Language Specific</h1><p>The web is a very diverse space. I suggest searching <a href="http://vimawesome.com/">VimAwesome</a> for the languages you program in most often to find what plugins may assist you personally.</p>
+<h1 id="What’s-Next"><a href="#What’s-Next" class="headerlink" title="What’s Next"></a>What’s Next</h1><p>Part 3 will cover configuring Zsh.</p>
+<a href="/a_modern_terminal_workflow_3/" title="A Modern Terminal Workflow — Part 3 / 5">A Modern Terminal Workflow — Part 3 / 5</a>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Core-Config"><span class="toc-number">1.</span> <span class="toc-text">Core Config</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Note-Syntax-highlighting-and-color-may-not-work-as-expected-within-Tmux-until-it-is-configured-in-Part-4-correctly"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">Note: Syntax highlighting and color may not work as expected within Tmux until it is configured in Part 4 correctly.</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-Sensible-Defaults"><span class="toc-number">1.1.</span> <span class="toc-text">Setting Sensible Defaults</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Opinionated-Defaults"><span class="toc-number">1.2.</span> <span class="toc-text">Opinionated Defaults</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Remapping-lt-Leader-gt-to-lt-Space-gt"><span class="toc-number">1.2.1.</span> <span class="toc-text">Remapping <Leader> to <Space></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disable-mouse-support"><span class="toc-number">1.2.2.</span> <span class="toc-text">Disable mouse support</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-Arrow-Keys-to-Resize-Panes"><span class="toc-number">1.2.3.</span> <span class="toc-text">Setting Arrow Keys to Resize Panes</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dealing-with-Buffers-Tabs"><span class="toc-number">1.3.</span> <span class="toc-text">Dealing with Buffers / Tabs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Return-to-the-last-file-opened"><span class="toc-number">1.3.1.</span> <span class="toc-text">Return to the last file opened</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Next-Previous-Buffer-Tab"><span class="toc-number">1.4.</span> <span class="toc-text">Next / Previous Buffer (Tab)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugins-to-Enhance-Functionality"><span class="toc-number">2.</span> <span class="toc-text">Plugins to Enhance Functionality</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Manager"><span class="toc-number">2.1.</span> <span class="toc-text">Plugin Manager</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#To-Install-Plugins"><span class="toc-number">2.1.1.</span> <span class="toc-text">To Install Plugins</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unite"><span class="toc-number">2.2.</span> <span class="toc-text">Unite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme-Dracula"><span class="toc-number">2.3.</span> <span class="toc-text">Theme: Dracula</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Indent-Guides"><span class="toc-number">2.4.</span> <span class="toc-text">Indent Guides</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Gutter"><span class="toc-number">2.5.</span> <span class="toc-text">Git Gutter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs-amp-a-Status-Bar"><span class="toc-number">2.6.</span> <span class="toc-text">Tabs & a Status Bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fuzzy-Finder"><span class="toc-number">2.7.</span> <span class="toc-text">Fuzzy Finder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-in-Files"><span class="toc-number">2.8.</span> <span class="toc-text">Find in Files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Project-as-File-Tree"><span class="toc-number">2.9.</span> <span class="toc-text">Project as File Tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Autocomplete"><span class="toc-number">2.10.</span> <span class="toc-text">Autocomplete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linting"><span class="toc-number">2.11.</span> <span class="toc-text">Linting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sneaking-—-Efficient-Moving"><span class="toc-number">2.12.</span> <span class="toc-text">Sneaking — Efficient Moving</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Language-Specific"><span class="toc-number">3.</span> <span class="toc-text">Language Specific</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What’s-Next"><span class="toc-number">4.</span> <span class="toc-text">What’s Next</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/a_modern_terminal_workflow_2/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&text=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&is_video=false&description=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A Modern Terminal Workflow — Part 2 / 5&body=Check out this article: https://wrotenwrites.com/a_modern_terminal_workflow_2/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&title=A Modern Terminal Workflow — Part 2 / 5"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/a_modern_terminal_workflow_2/&name=A Modern Terminal Workflow — Part 2 / 5&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 <a href="mailto:Joe.L.Wroten@gmail.com/">Joe L. Wroten</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-85374505-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'wrotenwrites';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

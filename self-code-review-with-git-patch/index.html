@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang=En>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Reduce errors and typos while building confidence with every chunk you commit.">
+<meta name="keywords" content="Git,Workplace,Code Review">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Self Code Review with Git Add Patch">
+<meta property="og:url" content="https://wrotenwrites.com/self-code-review-with-git-patch/index.html">
+<meta property="og:site_name" content="Wroten Writes">
+<meta property="og:description" content="Reduce errors and typos while building confidence with every chunk you commit.">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2017-11-11T02:30:37.525Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Self Code Review with Git Add Patch">
+<meta name="twitter:description" content="Reduce errors and typos while building confidence with every chunk you commit.">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Self Code Review with Git Add Patch</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/performance_reviews/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/git-commit-targeting/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/self-code-review-with-git-patch/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/self-code-review-with-git-patch/&text=Self Code Review with Git Add Patch"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/self-code-review-with-git-patch/&is_video=false&description=Self Code Review with Git Add Patch"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Self Code Review with Git Add Patch&body=Check out this article: https://wrotenwrites.com/self-code-review-with-git-patch/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/self-code-review-with-git-patch/&name=Self Code Review with Git Add Patch&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Useful-Bit-Git-Patch"><span class="toc-number">1.</span> <span class="toc-text">The Useful Bit: Git Patch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Now-What-Staging-Hunks-of-Code"><span class="toc-number">1.1.</span> <span class="toc-text">Now What? Staging Hunks of Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splitting-s"><span class="toc-number">1.2.</span> <span class="toc-text">Splitting s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-Add-or-d-Don’t-Add-Entire-File"><span class="toc-number">1.3.</span> <span class="toc-text">a Add or d Don’t Add Entire File</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Manually-Editing"><span class="toc-number">1.4.</span> <span class="toc-text">Manually Editing</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Summary"><span class="toc-number"></span> <span class="toc-text">Summary</span></a>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Self Code Review with Git Add Patch
+    </h1>
+    
+        <h2 class="posttitle" itemprop="name headline">
+            Reduce errors and typos while building confidence with every chunk you commit.
+        </h2>
+    
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wroten Writes</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-05-04T05:00:00.000Z" itemprop="datePublished">2017-05-04</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Code-Review/">Code Review</a>, <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/Workplace/">Workplace</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Code reviews reduce logical errors, call out typos, and prevents accidentally committing more code than intended (<a href="https://www.atlassian.com/agile/code-reviews">1</a>). They’re essential for <em>all sized teams</em> pushing to the same code base while <em>maintaining sanity</em>.</p>
+<p>Should a developer find themselves discovering any accidental “oops!” in their pull request it’s a good indicator of a flaw in workflow. <strong>Introducing the interactive self code review:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add --interactive</span><br></pre></td></tr></table></figure>
+<p>Interactive adding in git offers a choose-your-own-adventure style “What Now&gt;” series of options.</p>
+<h2 id="The-Useful-Bit-Git-Patch"><a href="#The-Useful-Bit-Git-Patch" class="headerlink" title="The Useful Bit: Git Patch"></a>The Useful Bit: <em>Git Patch</em></h2><p>Today let’s look at the <em><strong>p</strong>atch</em> option. We can skip to the patch option in the future with this handy shortcut:</p>
+<p><em>Example pretends we have file.ext and have added a line that defines a version…</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git add -p</span><br><span class="line"></span><br><span class="line">diff --git a/file.ext b/file.ext</span><br><span class="line">index sha1..sha2 sha3</span><br><span class="line">-- a/file.ext</span><br><span class="line">++ b/file.ext</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"example json"</span>,</span><br><span class="line">  +<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">Stage this hunk [y,n,q,a,d,/,e,?]?</span><br></pre></td></tr></table></figure>
+<p>Looks like a huge chunk of stuff! Broken down, the response describes what file was modified followed by a chunk of color coated git diff.</p>
+<h3 id="Now-What-Staging-Hunks-of-Code"><a href="#Now-What-Staging-Hunks-of-Code" class="headerlink" title="Now What? Staging Hunks of Code"></a>Now What? Staging Hunks of Code</h3><p>Many options are provided in the “Stage this hunk?” prompt following a git add patch.</p>
+<p>Pressing <code>?</code> in response to the prompt explains each valid response. These are some essentials:</p>
+<ul>
+<li><strong>y</strong> - stage this hunk</li>
+<li><strong>n</strong> - do <em>not</em> stage this hunk</li>
+<li><strong>q</strong> - quit</li>
+</ul>
+<p>You’ll find that by going through this process you can read every line you’d like to add to a commit and make better choices about them.</p>
+<h3 id="Splitting-s"><a href="#Splitting-s" class="headerlink" title="Splitting s"></a>Splitting <code>s</code></h3><p>These “magical” feeling chunks aren’t always smart enough. Sometimes there’s a need to split (with the <code>s</code> response) a chunk into smaller chunks. This comes up more often than you’d think if you’re developing empathetically.</p>
+<h3 id="a-Add-or-d-Don’t-Add-Entire-File"><a href="#a-Add-or-d-Don’t-Add-Entire-File" class="headerlink" title="a Add or d Don’t Add Entire File"></a><code>a</code> Add or <code>d</code> Don’t Add Entire File</h3><p>An <code>a</code> response will stage the current hunk and all the following within the current file automatically. This is <strong><em>not</em> recommended because you’re opting to skip parts of your personal code review</strong>.</p>
+<p>However, <code>d</code> is a nice way to skip adding anything from an entire file and can save a lot of time.</p>
+<h3 id="Manually-Editing"><a href="#Manually-Editing" class="headerlink" title="Manually Editing"></a>Manually Editing</h3><p>Typos or “oops!” can be quickly corrected with the <code>e</code> response. This will open just the chunk for quick adjustments including line adding and removal.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Git patch has become a core part of my workflow to <strong>ensure quality</strong> and boost <strong>personal confidence in the code I ship</strong>. Give it a try today!</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Useful-Bit-Git-Patch"><span class="toc-number">1.</span> <span class="toc-text">The Useful Bit: Git Patch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Now-What-Staging-Hunks-of-Code"><span class="toc-number">1.1.</span> <span class="toc-text">Now What? Staging Hunks of Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splitting-s"><span class="toc-number">1.2.</span> <span class="toc-text">Splitting s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-Add-or-d-Don’t-Add-Entire-File"><span class="toc-number">1.3.</span> <span class="toc-text">a Add or d Don’t Add Entire File</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Manually-Editing"><span class="toc-number">1.4.</span> <span class="toc-text">Manually Editing</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Summary"><span class="toc-number"></span> <span class="toc-text">Summary</span></a>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/self-code-review-with-git-patch/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/self-code-review-with-git-patch/&text=Self Code Review with Git Add Patch"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/self-code-review-with-git-patch/&is_video=false&description=Self Code Review with Git Add Patch"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Self Code Review with Git Add Patch&body=Check out this article: https://wrotenwrites.com/self-code-review-with-git-patch/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/self-code-review-with-git-patch/&title=Self Code Review with Git Add Patch"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/self-code-review-with-git-patch/&name=Self Code Review with Git Add Patch&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 <a href="mailto:Joe.L.Wroten@gmail.com/">Joe L. Wroten</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-85374505-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'wrotenwrites';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

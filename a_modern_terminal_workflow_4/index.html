@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang=En>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Configuring Tmux">
+<meta name="keywords" content="Dotfiles,Devtools,Tmux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Modern Terminal Workflow — Part 4 &#x2F; 5">
+<meta property="og:url" content="https://wrotenwrites.com/a_modern_terminal_workflow_4/index.html">
+<meta property="og:site_name" content="Wroten Writes">
+<meta property="og:description" content="Configuring Tmux">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2017-11-11T02:30:37.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Modern Terminal Workflow — Part 4 &#x2F; 5">
+<meta name="twitter:description" content="Configuring Tmux">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>A Modern Terminal Workflow — Part 4 / 5</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/a_modern_terminal_workflow_5/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/a_modern_terminal_workflow_3/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/a_modern_terminal_workflow_4/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&text=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&is_video=false&description=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A Modern Terminal Workflow — Part 4 / 5&body=Check out this article: https://wrotenwrites.com/a_modern_terminal_workflow_4/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&name=A Modern Terminal Workflow — Part 4 / 5&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Config"><span class="toc-number">1.</span> <span class="toc-text">Config</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fix-Copy-to-Global-Clipboard"><span class="toc-number">1.1.</span> <span class="toc-text">Fix Copy to Global Clipboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs"><span class="toc-number">1.2.</span> <span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Panes"><span class="toc-number">1.3.</span> <span class="toc-text">Create Panes</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugins"><span class="toc-number">2.</span> <span class="toc-text">Plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Manager"><span class="toc-number">2.1.</span> <span class="toc-text">Plugin Manager</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#To-Install-Plugins"><span class="toc-number">2.1.1.</span> <span class="toc-text">To Install Plugins</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sensible-Defaults"><span class="toc-number">2.2.</span> <span class="toc-text">Sensible Defaults</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Moving-Panes"><span class="toc-number">2.3.</span> <span class="toc-text">Moving Panes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme-Powerline-Yellow"><span class="toc-number">2.4.</span> <span class="toc-text">Theme: Powerline Yellow</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What’s-Next"><span class="toc-number">3.</span> <span class="toc-text">What’s Next</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        A Modern Terminal Workflow — Part 4 / 5
+    </h1>
+    
+        <h2 class="posttitle" itemprop="name headline">
+            Configuring Tmux
+        </h2>
+    
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wroten Writes</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-02-20T06:00:00.000Z" itemprop="datePublished">2017-02-20</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Devtools/">Devtools</a>, <a class="tag-link" href="/tags/Dotfiles/">Dotfiles</a>, <a class="tag-link" href="/tags/Tmux/">Tmux</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Multiplexing the terminal, huh? Tmux is a simple yet powerful way to work with multiple terminal based programs simultaniously. With Tmux one can ditch the mouse and use keyboard shortcuts to split panes and navigate between tabs of terminal workspaces making anyone a multitasking terminal master.</p>
+<p>Tmux was installed in Part 1 of this guide and its dotfile config can be modified with NeoVim like so <code>nvim tmux.conf</code>.</p>
+<h1 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h1><h2 id="Fix-Copy-to-Global-Clipboard"><a href="#Fix-Copy-to-Global-Clipboard" class="headerlink" title="Fix Copy to Global Clipboard"></a>Fix Copy to Global Clipboard</h2><p><em>Bah! This article starts with a fix?</em></p>
+<p>On later versions of OSX accessing the system clipboard from within tmux became problematic. This command resolves that issue utilizing the <code>reattach-to-user-namespace</code> tool already installed in <code>init.sh</code>.</p>
+<figure class="highlight vim"><figcaption><span>tmux.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> -g default-<span class="keyword">shell</span> $SHELL</span><br><span class="line"><span class="keyword">set</span> -g default-<span class="keyword">command</span> <span class="string">'reattach-to-user-namespace -l $&#123;SHELL&#125;'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>The obvious way to multitask is with tabs. It’s a great place to get started. These keybindings will make working with them more intuitive.</p>
+<figure class="highlight vim"><figcaption><span>tmux.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> -g status-position top</span><br><span class="line"><span class="keyword">set</span> -g base-<span class="built_in">index</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">set</span> -g pane-base-<span class="built_in">index</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">set</span> -g renumber-windows <span class="keyword">on</span></span><br><span class="line">bind-key -n C-t <span class="keyword">new</span>-window</span><br><span class="line">bind-key -n C-T <span class="keyword">new</span>-window -<span class="keyword">c</span> <span class="string">"#&#123;pane_current_path&#125;"</span></span><br><span class="line">bind-key -n C-<span class="keyword">w</span> kill-pane</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Ctrl t</code> to open new tab</li>
+<li><code>Ctrl T</code> to open new tab in same directory</li>
+<li><code>Ctrl w</code> to close a pane (and tab if only one pane)</li>
+</ul>
+<h2 id="Create-Panes"><a href="#Create-Panes" class="headerlink" title="Create Panes"></a>Create Panes</h2><p>A single tab can be split into multiple panes. Mastering panes not only makes the user look like a total terminal professional but can really boost efficiency. Combined with NeoVim this is as close as it gets to having your terminal act like the best parts of an IDE.</p>
+<figure class="highlight vim"><figcaption><span>tmux.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bind \ <span class="keyword">split</span>-window -h</span><br><span class="line">bind | <span class="keyword">split</span>-window -h -<span class="keyword">c</span> <span class="string">'#&#123;pane_current_path&#125;'</span></span><br><span class="line">bind - <span class="keyword">split</span>-window</span><br><span class="line">bind _ <span class="keyword">split</span>-window -<span class="keyword">c</span> <span class="string">'#&#123;pane_current_path&#125;'</span></span><br></pre></td></tr></table></figure>
+<p>A small tweak on the community “standard” pane splitting hotkeys.</p>
+<ul>
+<li><code>Ctrl b \</code> to open new vertical split</li>
+<li><code>Ctrl b |</code> to open new vertical split in current directory</li>
+<li><code>Ctrl b -</code> to open new horizontal split</li>
+<li><code>Ctrl b _</code> to open new horizontal split in current directory</li>
+</ul>
+<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><p>Unlike in previous parts of this series there isn’t much to extend in terms of functionality for Tmux. However, to get the most out of Tmux it’s ideal to install some well defined community made configurations.</p>
+<p>Adding a plugin manager to Tmux is as easy as installing tpm (Tmux Package Manager) via the Terminal. This can be done with git subtrees so that when these dotfiles are cloned to other machines in the future tpm is ready to go.</p>
+<figure class="highlight bash"><figcaption><span>Terminal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add -f tpm https://github.com/tmux-plugins/tpm.git</span><br><span class="line">git subtree add --prefix=tpm tpm master --squash</span><br></pre></td></tr></table></figure>
+<p>With tpm installed we can now initialize it in our Tmux Config.</p>
+<figure class="highlight vim"><figcaption><span>tmux.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> -g @plugin <span class="string">'tmux-plugins/tpm'</span></span><br><span class="line"># PLUGINS GO HERE!!!</span><br><span class="line">run <span class="string">'~/dotfiles/tpm/tpm'</span></span><br></pre></td></tr></table></figure>
+<h3 id="To-Install-Plugins"><a href="#To-Install-Plugins" class="headerlink" title="To Install Plugins"></a>To Install Plugins</h3><figure class="highlight bash"><figcaption><span>Terminal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux <span class="built_in">source</span> ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+<p><code>Ctrl b I</code> will install any newly added plugins. A prompt will appear at the top of the terminal to show installation progress.</p>
+<h2 id="Sensible-Defaults"><a href="#Sensible-Defaults" class="headerlink" title="Sensible Defaults"></a>Sensible Defaults</h2><figure class="highlight vim"><figcaption><span>tmux.conf plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> -g @plugin <span class="string">'tmux-plugins/tmux-sensible</span></span><br></pre></td></tr></table></figure>
+<p>This corrects rendering NeoVim in color through Tmux, removes the escape key delay, configures utf8, and more.</p>
+<h2 id="Moving-Panes"><a href="#Moving-Panes" class="headerlink" title="Moving Panes"></a>Moving Panes</h2><p>Splitting and removing panes is easy, but what about moving between them? What if there are NeoVim panes open as well as Tmux panes?</p>
+<figure class="highlight vim"><figcaption><span>tmux.conf plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> -g @plugin <span class="string">'christoomey/vim-tmux-navigator'</span></span><br></pre></td></tr></table></figure>
+<p>With this simple plugin this new concern is no longer. Moving between NeoVim and Tmux panes now use the same shortcuts.</p>
+<ul>
+<li><code>Ctrl h, j, k, or l</code> to switch to split left, down, up, right</li>
+</ul>
+<h2 id="Theme-Powerline-Yellow"><a href="#Theme-Powerline-Yellow" class="headerlink" title="Theme: Powerline Yellow"></a>Theme: Powerline Yellow</h2><figure class="highlight vim"><figcaption><span>tmux.conf plugin path</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> -g @themepack <span class="string">'block/yellow'</span></span><br><span class="line"><span class="keyword">set</span> -g @plugin <span class="string">'jimeh/tmux-themepack'</span></span><br></pre></td></tr></table></figure>
+<p>Much like vim-airline, this will give out lower tmux statusbar that powerline look. I’ve chosen gray but there are other <a href="https://github.com/jimeh/tmux-themepack">options</a>.</p>
+<h1 id="What’s-Next"><a href="#What’s-Next" class="headerlink" title="What’s Next"></a>What’s Next</h1><p>Part 5 will cover configuring iTerm2.</p>
+<a href="/a_modern_terminal_workflow_5/" title="A Modern Terminal Workflow — Part 5 / 5">A Modern Terminal Workflow — Part 5 / 5</a>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Config"><span class="toc-number">1.</span> <span class="toc-text">Config</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fix-Copy-to-Global-Clipboard"><span class="toc-number">1.1.</span> <span class="toc-text">Fix Copy to Global Clipboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs"><span class="toc-number">1.2.</span> <span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Panes"><span class="toc-number">1.3.</span> <span class="toc-text">Create Panes</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugins"><span class="toc-number">2.</span> <span class="toc-text">Plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Manager"><span class="toc-number">2.1.</span> <span class="toc-text">Plugin Manager</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#To-Install-Plugins"><span class="toc-number">2.1.1.</span> <span class="toc-text">To Install Plugins</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sensible-Defaults"><span class="toc-number">2.2.</span> <span class="toc-text">Sensible Defaults</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Moving-Panes"><span class="toc-number">2.3.</span> <span class="toc-text">Moving Panes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme-Powerline-Yellow"><span class="toc-number">2.4.</span> <span class="toc-text">Theme: Powerline Yellow</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What’s-Next"><span class="toc-number">3.</span> <span class="toc-text">What’s Next</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/a_modern_terminal_workflow_4/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&text=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&is_video=false&description=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A Modern Terminal Workflow — Part 4 / 5&body=Check out this article: https://wrotenwrites.com/a_modern_terminal_workflow_4/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&title=A Modern Terminal Workflow — Part 4 / 5"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/a_modern_terminal_workflow_4/&name=A Modern Terminal Workflow — Part 4 / 5&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 <a href="mailto:Joe.L.Wroten@gmail.com/">Joe L. Wroten</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-85374505-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'wrotenwrites';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

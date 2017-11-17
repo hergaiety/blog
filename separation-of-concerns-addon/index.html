@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang=En>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Less code, a faster test suite, and a tighter focus on core functionality can be achieved through embracing open source.">
+<meta name="keywords" content="Git,Open Source,Ember,Testing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Faster Test Suites, Less Code, Embracing Writing Addons.">
+<meta property="og:url" content="https://wrotenwrites.com/separation-of-concerns-addon/index.html">
+<meta property="og:site_name" content="Wroten Writes">
+<meta property="og:description" content="Less code, a faster test suite, and a tighter focus on core functionality can be achieved through embracing open source.">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2017-11-17T05:54:06.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Faster Test Suites, Less Code, Embracing Writing Addons.">
+<meta name="twitter:description" content="Less code, a faster test suite, and a tighter focus on core functionality can be achieved through embracing open source.">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Faster Test Suites, Less Code, Embracing Writing Addons.</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/less_blue_light_better_sleep/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/separation-of-concerns-addon/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/separation-of-concerns-addon/&text=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/separation-of-concerns-addon/&is_video=false&description=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Faster Test Suites, Less Code, Embracing Writing Addons.&body=Check out this article: https://wrotenwrites.com/separation-of-concerns-addon/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/separation-of-concerns-addon/&name=Faster Test Suites, Less Code, Embracing Writing Addons.&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Faster-Test-Suites-Less-Code-Embracing-Writing-Addons"><span class="toc-number">1.</span> <span class="toc-text">Faster Test Suites, Less Code, Embracing Writing Addons.</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Faster Test Suites, Less Code, Embracing Writing Addons.
+    </h1>
+    
+        <h2 class="posttitle" itemprop="name headline">
+            Less code, a faster test suite, and a tighter focus on core functionality can be achieved through embracing open source.
+        </h2>
+    
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wroten Writes</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-11-11T06:00:00.000Z" itemprop="datePublished">2017-11-11</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Ember/">Ember</a>, <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/Open-Source/">Open Source</a>, <a class="tag-link" href="/tags/Testing/">Testing</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Faster-Test-Suites-Less-Code-Embracing-Writing-Addons"><a href="#Faster-Test-Suites-Less-Code-Embracing-Writing-Addons" class="headerlink" title="Faster Test Suites, Less Code, Embracing Writing Addons."></a>Faster Test Suites, Less Code, Embracing Writing Addons.</h1><p>Less code, a faster test suite, and a tighter focus on core functionality can be achieved through embracing open source. <a href="https://www.emberaddons.com/">Ember addons</a> are on point in delivering such a promise as I’ve learned while open sourcing a widely used <a href="https://github.com/q2ebanking/ember-select-light">component at work</a>.</p>
+<p>The key is a separation of concerns. Modifying code rebuilds the app and, before shipping, all tests must be verified again regardless of what the modifcations touch. Moving chunks of an app, such as a component, to an open source addon grants all the benefits that come with code isolation. Admittedly similar can be achieved with careful abstraction and no open source, but I feel it’s the right direction for myself and likely others to aim for.</p>
+<p><strong>Less code</strong> a developer must retain in their heads the easier they may reason about the way an app flows. A well tested and well documented addon promises a level of functionality not often afforded by yet another file to be debugged within the app. While addon code eventually gets compiled into the final output, I’ve found the act of isolating code into an addon forces me to code more concisely and clearly for public consumption. Without the goal of open sourcing the addon I may cut corners thinking “it’s just for me, no big deal” which can do more harm than good longterm.</p>
+<p><strong>Faster test suite</strong> runs, without the cost of coverage, comes isolating tests to separate addon projects. This goes both ways in fact. Tests get removed from the original app and an addon will have just the tests to cover itself resulting in a quick build and test time. Isolated testing concerns can lead to higher relative code coverage and a quicker feedback loop for <a href="https://www.youtube.com/watch?v=2b1vcg_XSR8">test-driven development</a>.</p>
+<p><strong>Tighter focus on core functionality</strong> arises from the need to isolate an addon’s concern to a concise idea. Assigning a name and writing documentation for an addon is a healthy exercise in producing a highly intentional and hopefully valuable addon.</p>
+<p>After becoming no longer afraid of the world of open source I’ve learned to embrace the advantages that come from creating a wide range of projects. Addons are a new and exciting world for me and hopefully for you as well.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Faster-Test-Suites-Less-Code-Embracing-Writing-Addons"><span class="toc-number">1.</span> <span class="toc-text">Faster Test Suites, Less Code, Embracing Writing Addons.</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/separation-of-concerns-addon/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/separation-of-concerns-addon/&text=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/separation-of-concerns-addon/&is_video=false&description=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Faster Test Suites, Less Code, Embracing Writing Addons.&body=Check out this article: https://wrotenwrites.com/separation-of-concerns-addon/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/separation-of-concerns-addon/&title=Faster Test Suites, Less Code, Embracing Writing Addons."><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/separation-of-concerns-addon/&name=Faster Test Suites, Less Code, Embracing Writing Addons.&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 <a href="mailto:Joe.L.Wroten@gmail.com/">Joe L. Wroten</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-85374505-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'wrotenwrites';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
