@@ -1,7 +1,7 @@
 ---
 title: Faster Test Suites, Less Code, Embracing Writing Addons.
 description: Less code, a faster test suite, and a tighter focus on core functionality can be achieved through embracing open source.
-date: 2017/11/11
+date: 2017/11/17
 tags:
   - Git
   - Open Source
