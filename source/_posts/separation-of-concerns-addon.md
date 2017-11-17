@@ -9,8 +9,6 @@ tags:
   - Testing
 ---
 
-# Faster Test Suites, Less Code, Embracing Writing Addons.
-
 Less code, a faster test suite, and a tighter focus on core functionality can be achieved through embracing open source. [Ember addons](https://www.emberaddons.com/) are on point in delivering such a promise as I've learned while open sourcing a widely used [component at work](https://github.com/q2ebanking/ember-select-light).
 
 The key is a separation of concerns. Modifying code rebuilds the app and, before shipping, all tests must be verified again regardless of what the modifcations touch. Moving chunks of an app, such as a component, to an open source addon grants all the benefits that come with code isolation. Admittedly similar can be achieved with careful abstraction and no open source, but I feel it's the right direction for myself and likely others to aim for.
