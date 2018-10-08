@@ -16,3 +16,5 @@ Taking the time to learn Rails has better framed my understanding of the Javascr
 
 I never felt a need to venture outside of my bubble before. But by intentionally doing so, I realized the bubble only harmed by ability to learn rather than protect me in some way. There's no need to be afraid of learning. You never know just how much it may help you.
 
+Finally, I encourage you to document and share what you learn. I've published [my hello world's in both Ruby and Rails](https://github.com/sharpshark28/hello-ruby) and highly recommend [rubyonrail.org's Getting Started guide](https://guides.rubyonrails.org/getting_started.html#hello-rails-bang) if you'd like to get started with Rails and learn something fun.
+
