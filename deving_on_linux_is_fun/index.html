@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang=En>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Sometimes necessity gives you an excuse to learn some new fun stuff.">
+<meta name="keywords" content="Dotfiles,Devtools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dev&#39;ing on Linux is Fun!">
+<meta property="og:url" content="https://wrotenwrites.com/deving_on_linux_is_fun/index.html">
+<meta property="og:site_name" content="Wroten Writes">
+<meta property="og:description" content="Sometimes necessity gives you an excuse to learn some new fun stuff.">
+<meta property="og:locale" content="English">
+<meta property="og:image" content="https://wrotenwrites.com/images/posts/deving_on_linux_is_fun.png">
+<meta property="og:updated_time" content="2019-01-23T14:24:27.508Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dev&#39;ing on Linux is Fun!">
+<meta name="twitter:description" content="Sometimes necessity gives you an excuse to learn some new fun stuff.">
+<meta name="twitter:image" content="https://wrotenwrites.com/images/posts/deving_on_linux_is_fun.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Dev&#39;ing on Linux is Fun!</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/embers-app-import/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/separation-of-concerns-addon/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/deving_on_linux_is_fun/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/deving_on_linux_is_fun/&text=Dev&#39;ing on Linux is Fun!"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/deving_on_linux_is_fun/&is_video=false&description=Dev&#39;ing on Linux is Fun!"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Dev&#39;ing on Linux is Fun!&body=Check out this article: https://wrotenwrites.com/deving_on_linux_is_fun/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/deving_on_linux_is_fun/&name=Dev&#39;ing on Linux is Fun!&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Linux"><span class="toc-number">1.</span> <span class="toc-text">Why Linux?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Result"><span class="toc-number">1.1.</span> <span class="toc-text">The Result</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminal-—-Hyper"><span class="toc-number">1.1.1.</span> <span class="toc-text">Terminal — Hyper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell-—-Fish"><span class="toc-number">1.1.2.</span> <span class="toc-text">Shell — Fish</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NeoVim-and-Tmux"><span class="toc-number">1.1.3.</span> <span class="toc-text">NeoVim and Tmux</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Dev&#39;ing on Linux is Fun!
+    </h1>
+    
+        <h2 class="posttitle" itemprop="name headline">
+            Sometimes necessity gives you an excuse to learn some new fun stuff.
+        </h2>
+    
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wroten Writes</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-04-12T05:00:00.000Z" itemprop="datePublished">2018-04-12</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Devtools/">Devtools</a>, <a class="tag-link" href="/tags/Dotfiles/">Dotfiles</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>I <strong>love</strong> playing with my dotfiles. No, really, I could have played video games before bed but here I am up late <em>again</em> customizing my tooling stack. It’s a weird passion I have. I blame my former mentor <a href="https://github.com/toranb">Toran Billups</a>, but I digress.</p>
+<h1 id="Why-Linux"><a href="#Why-Linux" class="headerlink" title="Why Linux?"></a>Why Linux?</h1><p>In the past six years I’ve bounced between being a web app developer on Windows and MacOS. It should go without saying that Windows has given me numerous struggles, especially in an enterprise software environment.</p>
+<p>Recently we hit a wall. Ember would take over ten minutes to build and the more complicated apps were closer to twenty-five minutes. I’ve been not only throwing away countless development hours watching slow builds and build failures, but worse yet it’s been causing burnout.</p>
+<p>So we flipped the desk. I chose Linux over MacOS because, well, I’d hoped it would be fun and different… it has been!</p>
+<h2 id="The-Result"><a href="#The-Result" class="headerlink" title="The Result"></a>The Result</h2><p><img src="/images/posts/deving_on_linux_is_fun.png" alt="Dracula themed terminal prompt"></p>
+<p>Put simply, I’m finally able to use the tools that even on MacOS didn’t run well. I was able to refer back to <a href="https://wrotenwrites.com/a_modern_terminal_workflow_1/">my previous articles on writing dotfiles</a> while making adjustments for the platform, the fact that it’s 2018, and to change things up just a little. I find it beautiful and familiar.</p>
+<h3 id="Terminal-—-Hyper"><a href="#Terminal-—-Hyper" class="headerlink" title="Terminal — Hyper"></a>Terminal — Hyper</h3><p>I push my terminal a little, but not too hard. As a visual person doing web development, <a href="https://wrotenwrites.com/a_modern_terminal_workflow_1/">Hyper</a> is perfect for me.</p>
+<p>It feels lightning quick on my linux box and is simply gorgeous with <a href="https://draculatheme.com/hyper/">dracula theme</a> applied. I followed their “Install using config file” instructions while manually git cloning <a href="https://github.com/dracula/hyper">the repo</a> for Hyper to find. The configuration is a <code>.js</code> file which is bonus points for me.</p>
+<h3 id="Shell-—-Fish"><a href="#Shell-—-Fish" class="headerlink" title="Shell — Fish"></a>Shell — Fish</h3><p><a href="https://wrotenwrites.com/a_modern_terminal_workflow_3/">Previously I recommended using Zsh</a> with a bunch of customizations. Now, I just <a href="https://fishshell.com/">install Fish</a> which is configured nicely right out of the box.</p>
+<p>An <a href="https://github.com/nesl247/fish-theme-dracula">unofficial dracula theme</a> is available as well! I kept the prompt it comes with too which is nice.</p>
+<h3 id="NeoVim-and-Tmux"><a href="#NeoVim-and-Tmux" class="headerlink" title="NeoVim and Tmux"></a>NeoVim and Tmux</h3><p>Overall I’m still rocking the same <a href="https://wrotenwrites.com/a_modern_terminal_workflow_2/">NeoVim setup</a> and <a href="https://wrotenwrites.com/a_modern_terminal_workflow_4/">Tmux setup</a> I’ve recommended in the past. Some personal minor adjustments like <code>number relativenumber</code> which is a new favorite vim config of mine, and I’m pretty satisfied with it.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Linux"><span class="toc-number">1.</span> <span class="toc-text">Why Linux?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Result"><span class="toc-number">1.1.</span> <span class="toc-text">The Result</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminal-—-Hyper"><span class="toc-number">1.1.1.</span> <span class="toc-text">Terminal — Hyper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell-—-Fish"><span class="toc-number">1.1.2.</span> <span class="toc-text">Shell — Fish</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NeoVim-and-Tmux"><span class="toc-number">1.1.3.</span> <span class="toc-text">NeoVim and Tmux</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrotenwrites.com/deving_on_linux_is_fun/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrotenwrites.com/deving_on_linux_is_fun/&text=Dev&#39;ing on Linux is Fun!"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrotenwrites.com/deving_on_linux_is_fun/&is_video=false&description=Dev&#39;ing on Linux is Fun!"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Dev&#39;ing on Linux is Fun!&body=Check out this article: https://wrotenwrites.com/deving_on_linux_is_fun/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrotenwrites.com/deving_on_linux_is_fun/&title=Dev&#39;ing on Linux is Fun!"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrotenwrites.com/deving_on_linux_is_fun/&name=Dev&#39;ing on Linux is Fun!&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 <a href="mailto:Joe.L.Wroten@gmail.com/">Joe L. Wroten</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/archives/">Writings</a></li>
+         
+          <li><a href="http://joewroten.com/">Portfolio</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-85374505-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'wrotenwrites';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
